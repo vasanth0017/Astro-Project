@@ -1,0 +1,26 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+
+const { blok } = Astro.props
+
+
+---
+
+
+<nav class="bg-red-600 p-4" {...storyblokEditable(blok)}>
+    <div class="container mx-auto flex justify-between items-center">
+      
+      <div class="text-white text-2xl font-bold">
+        {blok.Header}
+      </div>
+    
+      <div class="hidden md:flex space-x-8">
+        <a href="https://localhost:4321/about-us" class="text-white hover:text-blue-300">{blok.menu1}</a>
+        <a href="#" class="text-white hover:text-blue-300">{blok.menu2}</a>
+        <a href="#" class="text-white hover:text-blue-300">{blok.menu3}</a>
+
+      </div>
+</nav>
+        
+  
+    

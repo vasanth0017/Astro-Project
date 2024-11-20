@@ -1,0 +1,17 @@
+---
+import { storyblokEditable } from '@storyblok/astro'
+
+const { blok } = Astro.props
+
+
+
+---
+<div class="text-center" {...storyblokEditable(blok)}>
+ 
+
+  <a class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600" href={blok.link?.cached_url || blok.link?.url}>{blok.Button}</a>
+  
+</div>
+
+ 
+
