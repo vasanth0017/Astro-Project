@@ -1,18 +1,16 @@
 import { defineConfig } from 'astro/config'
 import storyblok from '@storyblok/astro'
-import { loadEnv } from 'vite'
 import tailwind from '@astrojs/tailwind'
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import react from '@astrojs/react';
-const env = loadEnv('', process.cwd(), 'STORYBLOK')
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [storyblok({
-    //accessToken: env.STORYBLOK_TOKEN,
     accessToken: 'kJZhZFmsjQdPQ303DCdv0Qtt',
     apiOptions: {
-      region: '',
+      region: 'eu',
     },
     bridge: {
       customParent: 'https://app.storyblok.com',
@@ -38,5 +36,6 @@ export default defineConfig({
       https: true,
     },
   },
-  output:"server"
+  output:"server",
+  adapter: vercel()
 })
